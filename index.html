@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCenter Webmail</title>
+    <style>
+        /* Reset default margins/padding */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 50px 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            max-width: 120px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            background: #00c6ff;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #0072ff;
+        }
+
+        /* Language toggle */
+        .lang-toggle {
+            margin-top: 20px;
+        }
+
+        .lang-toggle button {
+            padding: 8px 15px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            transition: background 0.3s;
+        }
+
+        .lang-toggle button:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        /* Arabic support */
+        .arabic { display: none; direction: rtl; font-family: 'Arial', sans-serif; }
+
+        @media(max-width: 500px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 22px; }
+            p { font-size: 14px; }
+            .btn { padding: 10px 20px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <img src="images/logo.png" alt="JCenter Logo" class="logo">
+
+        <!-- English Content -->
+        <div class="english">
+            <h1>JCenter Webmail</h1>
+            <p>Access your email account securely</p>
+            <a href="https://jcenter.co.ke/webmail" target="_blank" class="btn">Login to Webmail</a>
+        </div>
+
+        <!-- Arabic Content -->
+        <div class="arabic">
+            <h1>بريد جم سنتر</h1>
+            <p>الدخول إلى حساب بريدك الإلكتروني بأمان</p>
+            <a href="https://jcenter.co.ke/webmail" target="_blank" class="btn">تسجيل الدخول للبريد</a>
+        </div>
+
+        <!-- Language Toggle -->
+        <div class="lang-toggle">
+            <button onclick="showEnglish()">English</button>
+            <button onclick="showArabic()">العربية</button>
+        </div>
+    </div>
+
+    <script>
+        function showEnglish() {
+            document.querySelector('.english').style.display = 'block';
+            document.querySelector('.arabic').style.display = 'none';
+        }
+
+        function showArabic() {
+            document.querySelector('.english').style.display = 'none';
+            document.querySelector('.arabic').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
